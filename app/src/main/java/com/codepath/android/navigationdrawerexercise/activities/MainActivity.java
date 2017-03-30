@@ -11,6 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.codepath.android.navigationdrawerexercise.R;
+import com.codepath.android.navigationdrawerexercise.fragments.FamilyGuyFragment;
+import com.codepath.android.navigationdrawerexercise.fragments.FuturamaFragment;
+import com.codepath.android.navigationdrawerexercise.fragments.SimpsonsFragment;
+import com.codepath.android.navigationdrawerexercise.fragments.SouthParkFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -46,22 +50,22 @@ public class MainActivity extends AppCompatActivity {
         // Create a new fragment and specify the fragment to show based on nav item clicked
         Fragment fragment = null;
         Class fragmentClass;
-//        switch(menuItem.getItemId()) {
-//            case R.id.south_park:
-//                fragmentClass = FirstFragment.class;
-//                break;
-//            case R.id.the_simpsons:
-//                fragmentClass = SecondFragment.class;
-//                break;
-//            case R.id.family_guy:
-//                fragmentClass = ThirdFragment.class;
-//                break;
-//            default:
-//                fragmentClass = FirstFragment.class;
-//        }
+        switch(menuItem.getItemId()) {
+            case R.id.south_park:
+                fragmentClass = SouthParkFragment.class;
+                break;
+            case R.id.the_simpsons:
+                fragmentClass = SimpsonsFragment.class;
+                break;
+            case R.id.family_guy:
+                fragmentClass = FamilyGuyFragment.class;
+                break;
+            default:
+                fragmentClass = FuturamaFragment.class;
+        }
 
         try {
-//            fragment = (Fragment) fragmentClass.newInstance();
+            fragment = (Fragment) fragmentClass.newInstance();
         } catch (Exception e) {
             e.printStackTrace();
         }
